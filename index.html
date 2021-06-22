@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>Zakhar</title>
+		<meta name='description' content='About Zakhar Yaitskikh'>
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+		<style>
+			body {
+				word-break: break-all;
+			}
+
+			a:link, a:visited {
+				color: white;
+				background-color: black;
+			}
+
+			a:hover, a:active {
+				color: white;
+				background-color: blue;
+			}
+		</style>
+	</head>
+
+	<body></body>
+
+	<script>
+		const repeatCount = 2500;
+		const defaultText = 'hellohi';
+
+		let text = defaultText.repeat(repeatCount);
+
+		const insertText = (textInsert, url, pos) => {
+			text = `${text.substr(0, pos - 1)}<a href='${url}' target='_blank'>${textInsert}</a>${text.substr(pos - 1)}`;
+		}
+
+		insertText('Twitter', 'https://twitter.com/Zakhar_YP', 1000);
+		insertText('LinkedIn', 'https://linkedin.com/in/zakhar-yaitskikh-a52a79213', 2000);
+		insertText('VK', 'https://vk.com/ghost1337gg', 3000);
+		insertText('Telegram', 'https://t.me/ghost1337gg', 4000);
+		insertText('Skype', 'skype:live:.cid.64ef69e74ccf2a7f?chat', 5000);
+
+		const elementBody = document.getElementsByTagName('body');
+
+		elementBody[0].innerHTML = text;
+	</script>
+</html>
